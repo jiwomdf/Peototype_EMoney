@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.programmergabut.peototype_emoney">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Peototype_EMoney">
-        <activity android:name=".SuccessActivity"></activity>
+        <activity android:name=".PaymentConfirmationEWalletActivity" />
+        <activity android:name=".ScanActivity" />
+        <activity android:name=".SuccessActivity" />
         <activity android:name=".PaymentConfirmationActivity" />
         <activity android:name=".PaymentQRActivity" />
         <activity android:name=".EwaletPayment" />

@@ -110,9 +110,11 @@
 
                 <ImageView
                     android:id="@+id/iv_shopee"
-                    android:layout_width="120dp"
+                    android:layout_width="5dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
                     android:src="@drawable/logo_shopee"
                     android:layout_gravity="center"
                     android:textColor="@color/black"
@@ -120,9 +122,10 @@
 
                 <ImageView
                     android:id="@+id/iv_gopay"
-                    android:layout_width="120dp"
+                    android:layout_width="5dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
                     android:src="@drawable/logo_gopay"
                     android:layout_gravity="center"
                     android:textColor="@color/black"
@@ -130,9 +133,9 @@
 
                 <ImageView
                     android:id="@+id/iv_ovo"
-                    android:layout_width="100dp"
+                    android:layout_width="5dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="8dp"
+                    android:layout_margin="4dp"
                     android:src="@drawable/logo_ovo"
                     android:layout_gravity="center"
                     android:textColor="@color/black"

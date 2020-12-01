@@ -1,16 +1,27 @@
 package com.programmergabut.peototype_emoney
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.core.content.res.ResourcesCompat
 import kotlinx.android.synthetic.main.activity_security_code.*
 
 class SecurityCode : BaseActivity(), View.OnClickListener {
 
     private var counter = 0
+    private var logo: Int? = null
+    private var platformName: String? = null
+
+    companion object {
+        const val DRAWABLE = "drawable"
+        const val PLATFORM_NAME = "PLATFORM_NAME"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_security_code)
+
+        logo = intent.extras?.getInt(DRAWABLE)
+        platformName = intent.extras?.getString(PLATFORM_NAME)
 
         setListener()
     }
@@ -36,8 +47,30 @@ class SecurityCode : BaseActivity(), View.OnClickListener {
                 counter -= 1
             }
             else -> {
-                if(++counter >= 5)
-                    gotoIntent(HomeActivity::class.java, null, false)
+                if(++counter >= 5){
+
+                    if(logo != null && platformName != null){
+
+                        val bundle = Bundle()
+                        bundle.putInt(ScanActivity.DRAWABLE, logo!!)
+                        bundle.putString(ScanActivity.PLATFORM_NAME, platformName)
+
+                        counter = 0
+
+                        gotoIntent(ScanActivity::class.java, bundle, false)
+                    }
+                    else{
+                        counter = 0
+                        showBottomSheetCustom("Account Created", "your account is successfully created",
+                            "back to login screen", isCancelable = false, isFinish = true
+                        ) {
+                            val i = Intent(this, LoginActivity::class.java)
+                            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                            startActivity(i)
+                        }
+                    }
+                }
+
             }
         }
 

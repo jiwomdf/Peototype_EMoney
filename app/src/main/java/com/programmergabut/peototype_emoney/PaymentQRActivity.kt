@@ -16,12 +16,11 @@ class PaymentQRActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment_qr)
 
-        val b = intent.extras
-        val d = b?.getInt(DRAWABLE)
-        
-        iv_logo.setImageDrawable()
-        b?.getString(USERNAME)
-        b?.getString(NOREK)
+        val bundle = intent.extras
+
+        iv_logo.setImageResource(bundle?.getInt(DRAWABLE) ?: 0)
+        tv_username.text = bundle?.getString(USERNAME) ?: "username"
+        tv_norek.text = bundle?.getString(NOREK) ?: "norek"
 
         Handler().postDelayed({
             gotoIntent(PaymentConfirmationActivity::class.java, null, false)
