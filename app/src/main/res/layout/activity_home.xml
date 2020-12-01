@@ -16,10 +16,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         >
 
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:src="@drawable/logo"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -30,6 +31,7 @@
             android:text="E-WALLET"/>
 
         <ImageView
+            android:id="@+id/iv_notification"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -87,62 +89,33 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_ewalet"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="62dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         app:cardCornerRadius="8dp"
         app:cardBackgroundColor="@color/purple_500"
-        app:layout_constraintTop_toBottomOf="@+id/cl_home_2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <TableLayout
+        app:layout_constraintTop_toBottomOf="@+id/cl_home_2">
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:stretchColumns="*"
-            android:background="@color/purple_500"
-            app:layout_constraintTop_toBottomOf="@+id/cl_home_2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:layout_height="128dp"
+            android:orientation="vertical">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="E - WALLET"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/iv_shopee"
-                    android:layout_width="5dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="4dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:src="@drawable/logo_shopee"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"/>
-
-                <ImageView
-                    android:id="@+id/iv_gopay"
-                    android:layout_width="5dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:src="@drawable/logo_gopay"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"/>
-
-                <ImageView
-                    android:id="@+id/iv_ovo"
-                    android:layout_width="5dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="4dp"
-                    android:src="@drawable/logo_ovo"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"/>
-
-            </TableRow>
-        </TableLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout

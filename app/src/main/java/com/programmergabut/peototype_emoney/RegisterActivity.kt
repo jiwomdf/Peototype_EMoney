@@ -97,7 +97,7 @@ class RegisterActivity : BaseActivity(), TextWatcher {
         }
         else{
             btn_do_register.isEnabled = true
-            btn_do_register.setBackgroundColor(ContextCompat.getColor(this, R.color.blue_900))
+            btn_do_register.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_700))
         }
 
     }

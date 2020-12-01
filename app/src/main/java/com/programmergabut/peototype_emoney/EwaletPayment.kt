@@ -3,6 +3,7 @@ package com.programmergabut.peototype_emoney
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_ewalet_payment.*
+import kotlinx.android.synthetic.main.activity_ewalet_payment.iv_notification
 
 class EwaletPayment : BaseActivity() {
 
@@ -21,6 +22,12 @@ class EwaletPayment : BaseActivity() {
     }
 
     private fun setListener(){
+        iv_back.setOnClickListener {
+            finish()
+        }
+        iv_notification.setOnClickListener {
+            gotoIntent(NotificationActivity::class.java, null , false)
+        }
         tr_shopee.setOnClickListener {
 
             val bundle = Bundle()

@@ -22,6 +22,12 @@ class DebitPaymentActivity : BaseActivity() {
     }
 
     private fun setListener(){
+        iv_back.setOnClickListener {
+            finish()
+        }
+        iv_notification.setOnClickListener {
+            gotoIntent(NotificationActivity::class.java, null , false)
+        }
         tr_bca.setOnClickListener {
 
             val b = Bundle()

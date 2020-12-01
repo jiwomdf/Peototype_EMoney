@@ -19,6 +19,12 @@ class HomeActivity : BaseActivity() {
         cv_ewalet.setOnClickListener {
             gotoIntent(EwaletPayment::class.java, null, false)
         }
+        iv_notification.setOnClickListener {
+            gotoIntent(NotificationActivity::class.java, null, false)
+        }
+        iv_profile.setOnClickListener {
+            gotoIntent(ProfileActivity::class.java, null, false)
+        }
     }
 
 
